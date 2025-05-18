@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screens/splash_screen.dart'; // correct this path if needed
+import 'screens/home_screen.dart';
 
 void main() {
   runApp(const BrainBuddiesApp());
@@ -13,7 +14,8 @@ class BrainBuddiesApp extends StatelessWidget {
     return MaterialApp(
       title: 'BrainBuddies',
       debugShowCheckedModeBanner: false,
-      home: const SplashScreen(),
+      home: HomeScreen(), // ✅ Should be this
     );
   }
 }
+

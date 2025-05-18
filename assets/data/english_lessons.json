@@ -1,0 +1,22 @@
+[
+    {
+      "letter": "A",
+      "word": "Apple",
+      "image": "assets/images/apple.png",
+      "audio": "audio/a_apple.mp3"
+
+    },
+    {
+      "letter": "B",
+      "word": "Ball",
+      "image": "assets/images/ball.png",
+      "audio": "audio/b_ball.mp3"
+    },
+    {
+      "letter": "C",
+      "word": "Cat",
+      "image": "assets/images/cat.png",
+      "audio": "audio/c_cat.mp3"
+    }
+  ]
+  

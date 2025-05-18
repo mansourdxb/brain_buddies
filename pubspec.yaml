@@ -35,11 +35,13 @@ dependencies:
 
   # Networking
   http: ^0.13.5
+  audioplayers: ^6.4.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  flutter_tts: ^3.8.5
 
 flutter:
   # Enables Material icons.
@@ -51,3 +53,12 @@ flutter:
     - assets/icons/
     - assets/translations/
     - assets/images/splash.png
+    - assets/images/home_bg.png
+    - assets/images/logo_brain.png
+    - assets/data/english_lessons.json
+    - assets/images/
+    - assets/audio/
+    - assets/audio/a_apple.mp3
+    - assets/audio/b_ball.mp3
+    - assets/audio/c_cat.mp3
+    - assets/data/english_quiz.json
