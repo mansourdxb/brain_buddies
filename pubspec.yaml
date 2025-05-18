@@ -1,0 +1,53 @@
+name: brain_buddies
+description: "A new Flutter project."
+
+# Prevents accidental publishing to pub.dev.
+publish_to: 'none'
+
+# Versioning for your app: major.minor.patch+build
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.7.2 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  get: ^4.6.6
+
+  # iOS‐style icons
+  cupertino_icons: ^1.0.8
+
+  # State management
+  provider: ^6.0.5
+
+  # Localization
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.19.0
+
+  # Local storage
+  shared_preferences: ^2.0.15
+
+  # SQLite support
+  sqflite: ^2.0.2+1
+  path_provider: ^2.0.11
+
+  # Networking
+  http: ^0.13.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  # Enables Material icons.
+  uses-material-design: true
+
+  # Your app’s asset directories.
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/translations/
+    - assets/images/splash.png
