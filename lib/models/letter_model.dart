@@ -2,13 +2,13 @@ class Letter {
   final String letter;
   final String word;
   final String image;
-  final String audio;
+  final String grade;
 
   Letter({
     required this.letter,
     required this.word,
     required this.image,
-    required this.audio,
+    required this.grade,
   });
 
   factory Letter.fromJson(Map<String, dynamic> json) {
@@ -16,7 +16,7 @@ class Letter {
       letter: json['letter'],
       word: json['word'],
       image: json['image'],
-      audio: json['audio'],
+      grade: json['grade'],
     );
   }
 }

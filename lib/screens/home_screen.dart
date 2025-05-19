@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'english_subject_screen.dart';
+import  'english_grades_screen.dart';
 import 'quiz_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -65,17 +65,16 @@ class HomeScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             _SubjectButton(
-              label: 'English',
+              label: 'Select School Grade',
               icon: Icons.menu_book,
               color: Colors.redAccent,
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => const EnglishSubjectScreen(),
-                  ),
-                );
-              },
+             onTap: () {
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (_) => GradeSelectionScreen()),
+  );
+}
+,
             ),
             const SizedBox(height: 16),
             _SubjectButton(
@@ -86,7 +85,8 @@ class HomeScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => const QuizScreen(),
+                    builder: (_) => QuizScreen(filePath: 'assets/lessons/english/fs1/quiz_1.json'),
+
                   ),
                 );
               },

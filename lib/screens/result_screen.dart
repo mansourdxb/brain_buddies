@@ -29,7 +29,7 @@ class ResultScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (_) => const QuizScreen()),
+                  MaterialPageRoute(builder: (_) => QuizScreen(filePath: 'assets/lessons/english/fs1/quiz_1.json')),
                 );
               },
               child: const Text('Try Again'),

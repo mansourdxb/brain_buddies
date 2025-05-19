@@ -1,0 +1,15 @@
+[
+    {
+      "id": "lesson_1",
+      "title": "Phonics A–F",
+      "file": "lesson_1.json",
+      "type": "Lesson"
+    },
+    {
+      "id": "quiz_1",
+      "title": "Match Letters",
+      "file": "quiz_1.json",
+      "type": "Quiz"
+    }
+  ]
+  

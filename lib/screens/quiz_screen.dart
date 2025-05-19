@@ -1,92 +1,148 @@
 import 'dart:convert';
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../models/quiz_model.dart';
-import 'result_screen.dart';
-
-
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 
 class QuizScreen extends StatefulWidget {
-  const QuizScreen({super.key});
+  final String filePath;
+
+  const QuizScreen({super.key, required this.filePath});
 
   @override
   State<QuizScreen> createState() => _QuizScreenState();
 }
 
-class _QuizScreenState extends State<QuizScreen> {
-  List<QuizQuestion> _questions = [];
-  int _currentIndex = 0;
-  int _score = 0;
+class _QuizScreenState extends State<QuizScreen> 
+{
+  List<dynamic> questions = [];
+  int currentIndex = 0;
+  String? selectedOption;
+  bool answered = false;
+  int correctAnswers = 0; // ✅ Added
+  final player = AudioPlayer();
+
+Future<void> saveQuizResult(int correct, int total) async {
+  final prefs = await SharedPreferences.getInstance();
+  final quizId = widget.filePath.split('/').last.replaceAll('.json', '');
+
+  await prefs.setInt('${quizId}_score', correct);
+  await prefs.setInt('${quizId}_total', total);
+  await prefs.setBool('${quizId}_completed', true);
+}
+
 
   @override
   void initState() {
     super.initState();
-    loadQuestions();
+    loadQuiz();
   }
 
-  Future<void> loadQuestions() async {
-    final String response = await rootBundle.loadString('assets/data/english_quiz.json');
-    final List<dynamic> data = json.decode(response);
+  Future<void> loadQuiz() async 
+  {
+    final String content = await rootBundle.loadString(widget.filePath);
+    final Map<String, dynamic> data = json.decode(content);
     setState(() {
-      _questions = data.map((e) => QuizQuestion.fromJson(e)).toList();
-      _questions.shuffle();
+      questions = data['questions'];
     });
   }
 
-  void handleAnswer(String selected) {
-    if (_questions[_currentIndex].correct == selected) {
-      _score++;
-    }
-    if (_currentIndex < _questions.length - 1) {
-      setState(() => _currentIndex++);
-    } else {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (_) => ResultScreen(score: _score, total: _questions.length)),
-      );
-    }
+  void checkAnswer(String selected) async {
+  final correct = questions[currentIndex]['answer'];
+
+  if (selected == correct) {
+    correctAnswers++;
+    await player.play(AssetSource('sounds/correct.mp3'));
+  } else {
+    await player.play(AssetSource('sounds/wrong.mp3'));
+  }
+
+  setState(() {
+    selectedOption = selected;
+    answered = true;
+  });
+
+    Future.delayed(const Duration(seconds: 1), () {
+      setState(() {
+        if (currentIndex < questions.length - 1) {
+          currentIndex++;
+          selectedOption = null;
+          answered = false;
+       } else {
+              saveQuizResult(correctAnswers, questions.length); // ✅ Save progress
+
+  showDialog(
+    context: context,
+    barrierDismissible: false,
+    builder: (_) => AlertDialog(
+      title: const Text("Quiz Complete"),
+      content: Text("You answered $correctAnswers out of ${questions.length} correctly."),
+      actions: [
+        TextButton(
+          onPressed: () {
+            Navigator.pop(context); // Close dialog
+            Navigator.pop(context); // Go back to previous screen
+          },
+          child: const Text("Back"),
+        )
+      ],
+    ),
+  );
+}
+
+      });
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    if (_questions.isEmpty) {
+    if (questions.isEmpty) {
       return const Scaffold(
         body: Center(child: CircularProgressIndicator()),
       );
     }
 
-    final question = _questions[_currentIndex];
-    final List<String> shuffledOptions = List.from(question.options)..shuffle();
+    final q = questions[currentIndex];
 
     return Scaffold(
-      appBar: AppBar(title: Text('Question ${_currentIndex + 1}')),
+      appBar: AppBar(title: Text('Quiz')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              question.question,
-              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              q['question'],
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 24),
-            ...shuffledOptions.map((opt) => GestureDetector(
-                  onTap: () => handleAnswer(opt),
-                  child: Card(
-                    elevation: 4,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Image.asset(
-                        opt,
-                        width: 200,
-                        height: 150,
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                  ),
-                )),
+            ...List.generate(q['options'].length, (index) {
+  final option = q['options'][index];
+  final isCorrect = option == q['answer'];
+  final isSelected = option == selectedOption;
+
+  Color? tileColor;
+  if (answered) {
+    tileColor = isCorrect
+        ? Colors.green
+        : isSelected
+            ? Colors.red
+            : null;
+  }
+
+  return AnimatedOpacity(
+    duration: const Duration(milliseconds: 300),
+    opacity: answered ? 1.0 : 1.0,
+    child: Card(
+      color: tileColor,
+      child: ListTile(
+        title: Text(option),
+        onTap: answered ? null : () => checkAnswer(option),
+      ),
+    ),
+  );
+})
+,
           ],
         ),
       ),
