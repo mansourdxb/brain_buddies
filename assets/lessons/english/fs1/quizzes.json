@@ -1,0 +1,114 @@
+{
+  "quizzes": [
+    {
+      "id": "quiz_1",
+      "title": "Match Letters A–D",
+      "questions": [
+        {
+          "question": "What letter comes after B?",
+          "options": ["A", "C", "D", "E"],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "id": "quiz_2",
+      "title": "Find the Vowels",
+      "questions": [
+        {
+          "question": "Which of these is a vowel?",
+          "options": ["B", "C", "E", "F"],
+          "answer": "E"
+        }
+      ]
+    },
+    {
+      "id": "quiz_3",
+      "title": "Uppercase vs Lowercase",
+      "questions": [
+        {
+          "question": "Which one is a lowercase letter?",
+          "options": ["A", "b", "C", "D"],
+          "answer": "b"
+        }
+      ]
+    },
+    {
+      "id": "quiz_4",
+      "title": "Identify the Starting Sound",
+      "questions": [
+        {
+          "question": "Which word starts with 'C'?",
+          "options": ["Dog", "Apple", "Car", "Ball"],
+          "answer": "Car"
+        }
+      ]
+    },
+    {
+      "id": "quiz_5",
+      "title": "Rhyming Words",
+      "questions": [
+        {
+          "question": "Which word rhymes with 'Cat'?",
+          "options": ["Bat", "Dog", "Cup", "Tree"],
+          "answer": "Bat"
+        }
+      ]
+    },
+    {
+      "id": "quiz_6",
+      "title": "Alphabet Order",
+      "questions": [
+        {
+          "question": "Which comes first in the alphabet?",
+          "options": ["M", "A", "T", "C"],
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "id": "quiz_7",
+      "title": "Find the Consonant",
+      "questions": [
+        {
+          "question": "Which of these is a consonant?",
+          "options": ["A", "E", "I", "B"],
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "id": "quiz_8",
+      "title": "Match Sound to Letter",
+      "questions": [
+        {
+          "question": "Which letter makes the /t/ sound?",
+          "options": ["T", "B", "S", "D"],
+          "answer": "T"
+        }
+      ]
+    },
+    {
+      "id": "quiz_9",
+      "title": "Beginning Letters",
+      "questions": [
+        {
+          "question": "What is the beginning letter of 'Apple'?",
+          "options": ["B", "A", "C", "D"],
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "id": "quiz_10",
+      "title": "Vowel Identification",
+      "questions": [
+        {
+          "question": "Which one is a vowel?",
+          "options": ["F", "G", "O", "H"],
+          "answer": "O"
+        }
+      ]
+    }
+  ]
+}

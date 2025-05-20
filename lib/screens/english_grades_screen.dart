@@ -29,22 +29,21 @@ class GradeSelectionScreen extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: const Text('Select School Grade'),
+        title: const Text('Select Your Grade'),
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFFE3F2FD), Color(0xFFFFFFFF)],
+            colors: [Color(0xFFFDEB71), Color(0xFFF8D800)],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
         ),
         child: ListView.builder(
           itemCount: grades.length,
-          padding: const EdgeInsets.fromLTRB(16, kToolbarHeight + 64, 16, 24),
-
+          padding: const EdgeInsets.fromLTRB(16, kToolbarHeight + 40, 16, 24),
           itemBuilder: (context, index) {
             return Card(
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
@@ -53,12 +52,13 @@ class GradeSelectionScreen extends StatelessWidget {
               child: ListTile(
                 contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                 leading: CircleAvatar(
-                  backgroundColor: Colors.blueAccent,
+                  radius: 24,
+                  backgroundColor: Colors.deepPurpleAccent,
                   child: Icon(icons[index], color: Colors.white),
                 ),
                 title: Text(
                   grades[index],
-                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 trailing: const Icon(Icons.arrow_forward_ios),
                 onTap: () {

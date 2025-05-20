@@ -1,15 +1,7 @@
-[
-    {
-      "id": "lesson_1",
-      "title": "Counting 1–10",
-      "file": "lesson_1.json",
-      "type": "Lesson"
-    },
-    {
-      "id": "quiz_1",
-      "title": "Number Matching",
-      "file": "quiz_1.json",
-      "type": "Quiz"
-    }
-  ]
-  
+{
+  "id": "lesson_1",
+  "title": "Add with Pictures",
+  "type": "Lesson",
+  "file": "lessons.json",
+  "lessonId": "lesson_1"
+}

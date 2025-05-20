@@ -49,7 +49,6 @@ flutter:
   # Your app’s asset directories.
   assets:
     - assets/images/
-    - assets/icons/
     - assets/translations/
     - assets/images/splash.png
     - assets/images/home_bg.png
@@ -64,4 +63,6 @@ flutter:
     - assets/lessons/
     - assets/sounds/correct.mp3
     - assets/sounds/wrong.mp3
+    - assets/lessons/english/fs1/index.json
+    - assets/lessons/english/fs1/quizzes.json
 

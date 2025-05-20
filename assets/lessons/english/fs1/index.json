@@ -2,7 +2,142 @@
   {
     "id": "quiz_1",
     "title": "Match Letters A–D",
-    "file": "quiz_1.json",
-    "type": "Quiz"
+    "type": "Quiz",
+    "file": "quizzes.json",
+    "quizId": "quiz_1"
+  },
+  {
+    "id": "quiz_2",
+    "title": "Find the Vowels",
+    "type": "Quiz",
+    "file": "quizzes.json",
+    "quizId": "quiz_2"
+  },
+  {
+    "id": "quiz_3",
+    "title": "Uppercase vs Lowercase",
+    "type": "Quiz",
+    "file": "quizzes.json",
+    "quizId": "quiz_3"
+  },
+  {
+    "id": "quiz_4",
+    "title": "Identify the Starting Sound",
+    "type": "Quiz",
+    "file": "quizzes.json",
+    "quizId": "quiz_4"
+  },
+  {
+    "id": "quiz_5",
+    "title": "Rhyming Words",
+    "type": "Quiz",
+    "file": "quizzes.json",
+    "quizId": "quiz_5"
+  },
+  {
+    "id": "quiz_6",
+    "title": "Alphabet Order",
+    "type": "Quiz",
+    "file": "quizzes.json",
+    "quizId": "quiz_6"
+  },
+  {
+    "id": "quiz_7",
+    "title": "Find the Consonant",
+    "type": "Quiz",
+    "file": "quizzes.json",
+    "quizId": "quiz_7"
+  },
+  {
+    "id": "quiz_8",
+    "title": "Match Sound to Letter",
+    "type": "Quiz",
+    "file": "quizzes.json",
+    "quizId": "quiz_8"
+  },
+  {
+    "id": "quiz_9",
+    "title": "Beginning Letters",
+    "type": "Quiz",
+    "file": "quizzes.json",
+    "quizId": "quiz_9"
+  },
+  {
+    "id": "quiz_10",
+    "title": "Vowel Identification",
+    "type": "Quiz",
+    "file": "quizzes.json",
+    "quizId": "quiz_10"
+  },
+  {
+    "id": "lesson_1",
+    "title": "Letter A Lesson",
+    "type": "Lesson",
+    "file": "lessons.json",
+    "lessonId": "lesson_1"
+  },
+  {
+    "id": "lesson_2",
+    "title": "Letter B Lesson",
+    "type": "Lesson",
+    "file": "lessons.json",
+    "lessonId": "lesson_2"
+  },
+  {
+    "id": "lesson_3",
+    "title": "Letter C Lesson",
+    "type": "Lesson",
+    "file": "lessons.json",
+    "lessonId": "lesson_3"
+  },
+  {
+    "id": "lesson_4",
+    "title": "Letter D Lesson",
+    "type": "Lesson",
+    "file": "lessons.json",
+    "lessonId": "lesson_4"
+  },
+  {
+    "id": "lesson_5",
+    "title": "Letter E Lesson",
+    "type": "Lesson",
+    "file": "lessons.json",
+    "lessonId": "lesson_5"
+  },
+  {
+    "id": "lesson_6",
+    "title": "Letter F Lesson",
+    "type": "Lesson",
+    "file": "lessons.json",
+    "lessonId": "lesson_6"
+  },
+  {
+    "id": "lesson_7",
+    "title": "Letter G Lesson",
+    "type": "Lesson",
+    "file": "lessons.json",
+    "lessonId": "lesson_7"
+  },
+  {
+    "id": "lesson_8",
+    "title": "Letter H Lesson",
+    "type": "Lesson",
+    "file": "lessons.json",
+    "lessonId": "lesson_8"
+  },
+  {
+    "id": "lesson_9",
+    "title": "Letter I Lesson",
+    "type": "Lesson",
+    "file": "lessons.json",
+    "lessonId": "lesson_9"
+  },
+  {
+    "id": "lesson_10",
+    "title": "Letter J Lesson",
+    "type": "Lesson",
+    "file": "lessons.json",
+    "lessonId": "lesson_10"
   }
 ]
+

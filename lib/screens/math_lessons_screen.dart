@@ -48,14 +48,17 @@ class _MathLessonsScreenState extends State<MathLessonsScreen> {
                   type: lesson['type'],
                   icon: lesson['type'] == 'Quiz' ? Icons.calculate : Icons.functions,
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => lesson['type'] == 'Quiz'
-                            ? QuizScreen(filePath: path)
-                            : LessonViewerScreen(filePath: path),
-                      ),
-                    );
+                Navigator.push(
+  context,
+  MaterialPageRoute(
+    builder: (_) => LessonViewerScreen(
+      filePath: 'assets/lessons/math/year1/lessons.json',
+      lessonId: lesson['lessonId'], // ✅ required
+      title: lesson['title'],
+    ),
+  ),
+);
+
                   },
                 );
               },

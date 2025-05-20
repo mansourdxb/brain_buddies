@@ -1,0 +1,94 @@
+{
+  "lessons": [
+    {
+      "id": "lesson_1",
+      "title": "Letter A Lesson",
+      "content": [
+        { "type": "text", "value": "A is for Apple." },
+        { "type": "image", "value": "assets/images/apple.png" },
+        { "type": "text", "value": "We pronounce it as /æ/." }
+      ]
+    },
+    {
+      "id": "lesson_2",
+      "title": "Letter B Lesson",
+      "content": [
+        { "type": "text", "value": "B is for Ball." },
+        { "type": "image", "value": "assets/images/ball.png" },
+        { "type": "text", "value": "It makes the /b/ sound." }
+      ]
+    },
+    {
+      "id": "lesson_3",
+      "title": "Letter C Lesson",
+      "content": [
+        { "type": "text", "value": "C is for Cat." },
+        { "type": "image", "value": "assets/images/cat.png" },
+        { "type": "text", "value": "It makes the /k/ sound." }
+      ]
+    },
+    {
+      "id": "lesson_4",
+      "title": "Letter D Lesson",
+      "content": [
+        { "type": "text", "value": "D is for Dog." },
+        { "type": "image", "value": "assets/images/dog.png" },
+        { "type": "text", "value": "It makes the /d/ sound." }
+      ]
+    },
+    {
+      "id": "lesson_5",
+      "title": "Letter E Lesson",
+      "content": [
+        { "type": "text", "value": "E is for Elephant." },
+        { "type": "image", "value": "assets/images/elephant.png" },
+        { "type": "text", "value": "It makes the /e/ sound." }
+      ]
+    },
+    {
+      "id": "lesson_6",
+      "title": "Letter F Lesson",
+      "content": [
+        { "type": "text", "value": "F is for Fish." },
+        { "type": "image", "value": "assets/images/fish.png" },
+        { "type": "text", "value": "It makes the /f/ sound." }
+      ]
+    },
+    {
+      "id": "lesson_7",
+      "title": "Letter G Lesson",
+      "content": [
+        { "type": "text", "value": "G is for Goat." },
+        { "type": "image", "value": "assets/images/goat.png" },
+        { "type": "text", "value": "It makes the /g/ sound." }
+      ]
+    },
+    {
+      "id": "lesson_8",
+      "title": "Letter H Lesson",
+      "content": [
+        { "type": "text", "value": "H is for Hat." },
+        { "type": "image", "value": "assets/images/hat.png" },
+        { "type": "text", "value": "It makes the /h/ sound." }
+      ]
+    },
+    {
+      "id": "lesson_9",
+      "title": "Letter I Lesson",
+      "content": [
+        { "type": "text", "value": "I is for Igloo." },
+        { "type": "image", "value": "assets/images/igloo.png" },
+        { "type": "text", "value": "It makes the /i/ sound." }
+      ]
+    },
+    {
+      "id": "lesson_10",
+      "title": "Letter J Lesson",
+      "content": [
+        { "type": "text", "value": "J is for Jam." },
+        { "type": "image", "value": "assets/images/jam.png" },
+        { "type": "text", "value": "It makes the /j/ sound." }
+      ]
+    }
+  ]
+}  

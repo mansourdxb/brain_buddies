@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'dart:convert';
 import '../widgets/lesson_tile.dart';
-
-
-
+import '../screens/quiz_screen.dart';
 import 'lesson_viewer_screen.dart';
 
 class EnglishLessonsScreen extends StatefulWidget {
@@ -40,27 +38,39 @@ class _EnglishLessonsScreenState extends State<EnglishLessonsScreen> {
       body: lessons.isEmpty
           ? const Center(child: CircularProgressIndicator())
           : ListView.builder(
-              itemCount: lessons.length,
-              itemBuilder: (context, index) {
-                final lesson = lessons[index];
- return LessonTile(
-  title: lesson['title'],
-  type: lesson['type'],  // should exist in index.json
-  icon: lesson['type'] == 'Quiz' ? Icons.quiz : Icons.menu_book,
-  onTap: () {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (_) => LessonViewerScreen(
-          filePath: 'assets/lessons/english/${widget.selectedGrade.toLowerCase()}/${lesson['file']}',
-        ),
-      ),
+  itemCount: lessons.length,
+  itemBuilder: (context, index) {
+    final lesson = lessons[index];
+
+    return ListTile(
+      title: Text(lesson['title']),
+      subtitle: Text(lesson['type']),
+      trailing: const Icon(Icons.arrow_forward_ios),
+     onTap: () {
+  final filePath = 'assets/lessons/english/${widget.selectedGrade.toLowerCase()}/${lesson['file']}';
+
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (_) => lesson['type'] == 'Quiz'
+          ? QuizScreen(
+              filePath: filePath,
+              quizId: lesson['quizId'],
+              title: lesson['title'],
+            )
+          : LessonViewerScreen(
+              filePath: filePath,
+              lessonId: lesson['lessonId'],
+              title: lesson['title'],
+            ),
+    ),
+  );
+}
+,
     );
   },
-);
-
-              },
-            ),
+)
+,
     );
   }
 }
